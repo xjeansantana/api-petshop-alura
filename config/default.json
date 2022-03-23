@@ -3,7 +3,8 @@
         "banco-de-dados": "petshop",
         "usuario": "root",
         "senha": "admin",
-        "host": "127.0.0.1"
+        "host": "localhost",
+        "porta": 3306
     },
     "api": {
         "porta": 3000
