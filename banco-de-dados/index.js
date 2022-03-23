@@ -11,5 +11,3 @@ const instancia = new Sequelize(
 )
 
 module.exports = instancia
-
-//código omitido
