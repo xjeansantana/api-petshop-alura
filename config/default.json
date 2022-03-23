@@ -5,7 +5,7 @@
         "senha": "admin",
         "host": "127.0.0.1"
     },
-    "api":{
+    "api": {
         "porta": 3000
     }
 }
