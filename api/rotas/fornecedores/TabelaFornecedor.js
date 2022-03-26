@@ -1,13 +1,14 @@
 const Modelo = require('./ModeloTabelaFornecedor')
+const NaoEncontrado = require('../../erros/NaoEncontrado')
 
 module.exports = {
-    listar() {
+    listar () {
         return Modelo.findAll()
     },
-    inserir(fornecedor) {
+    inserir (fornecedor) {
         return Modelo.create(fornecedor)
     },
-    async pegarPorId(id) {
+    async pegarPorId (id) {
         const encontrado = await Modelo.findOne({
             where: {
                 id: id
@@ -15,25 +16,22 @@ module.exports = {
         })
 
         if (!encontrado) {
-            throw new Error('Fornecedor não encontrado')
+            throw new NaoEncontrado()
         }
 
         return encontrado
     },
-    atualizar(id, dadosParaAtualizar) {
+    atualizar (id, dadosParaAtualizar) {
         return Modelo.update(
-            dadosParaAtualizar, {
-                where: {
-                    id: id
-                }
+            dadosParaAtualizar,
+            {
+                where: { id: id }
             }
         )
     },
-    remover(id) {
+    remover (id) {
         return Modelo.destroy({
-            where: {
-                id: id
-            }
+            where: { id: id }
         })
     }
 }
